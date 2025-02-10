@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,26 +14,24 @@ public class MoveToDestinationScript : MonoBehaviour
     public int index_WaitPoint;
 
     [Header("Waypoints")]
-    [SerializeField] RectTransform[] wayPointTransforms;
+    [SerializeField] public RectTransform[] wayPointTransforms;
     public int currentWaypointIndex;
-    
 
     [Header("etc")]
-    [SerializeField] EditAlphaValue editAlphaValue;
-    [SerializeField] CarManager carManager;
+    [SerializeField] public EditAlphaValue editAlphaValue;
 
-    Image targetImage;
     List<Vector2> waypoints = new List<Vector2>();
-    Vector2 initialPosition;
 
-    bool isMoving = false;
+    [SerializeField] float MoveTime;
+    [SerializeField] int EndIndex;
+    [SerializeField] int CurrentIndex = 0;
+
+    float MoveTimer;
 
     void Start()
     {
-        targetImage = GetComponent<Image>();
         carTransform = GetComponent<RectTransform>();
         editAlphaValue = GetComponent<EditAlphaValue>();
-        initialPosition = carTransform.anchoredPosition;
 
         foreach (var wp in wayPointTransforms)
         {
@@ -40,59 +39,28 @@ public class MoveToDestinationScript : MonoBehaviour
         }
     }
 
-    public IEnumerator MoveNextPointCoroutine()
+    void Update()
     {
-        isMoving = true;
+        MoveTimer += Time.deltaTime;
 
-        if (currentWaypointIndex == 0)
+        if (MoveTimer > MoveTime) 
         {
-            if (targetImage != null)
-                targetImage.enabled = true;
+            MoveNextPointCoroutine();
+            MoveTimer = 0;
         }
+    }
 
-        if (currentWaypointIndex > index_WaitPoint)
+    public void MoveNextPointCoroutine()
+    {
+        if (CurrentIndex >= EndIndex)
         {
-            editAlphaValue.enabled = true;
-
-            while (currentWaypointIndex < waypoints.Count)
-            {
-
-                Vector2 targetPosition = waypoints[currentWaypointIndex];
-                currentWaypointIndex++;
-
-
-                while (Vector2.Distance(carTransform.anchoredPosition, targetPosition) > 1.0f)
-                {
-                    carTransform.anchoredPosition = Vector2.MoveTowards(
-                        carTransform.anchoredPosition,
-                        targetPosition,
-                        moveSpeed * Time.deltaTime
-                    );
-
-                    Vector2 direction = targetPosition - carTransform.anchoredPosition;
-                    if (direction != Vector2.zero)
-                    {
-                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-                        carTransform.rotation = Quaternion.Lerp(carTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-                    }
-                    yield return null;
-                }
-
-                carTransform.anchoredPosition = targetPosition;
-            }
-
-            carTransform.anchoredPosition = initialPosition;
-            editAlphaValue.ResetAlpha();
-            editAlphaValue.enabled = false;
-            currentWaypointIndex = 0;
+            Destroy(gameObject);
         }
-        else
+        else 
         {
             Vector2 targetPosition = waypoints[currentWaypointIndex];
-            currentWaypointIndex++;
 
-            while (Vector2.Distance(carTransform.anchoredPosition, targetPosition) > 1.0f)
+            if (Vector2.Distance(carTransform.anchoredPosition, targetPosition) > 1.0f)
             {
                 carTransform.anchoredPosition = Vector2.MoveTowards(carTransform.anchoredPosition, targetPosition,
                     moveSpeed * Time.deltaTime);
@@ -105,14 +73,14 @@ public class MoveToDestinationScript : MonoBehaviour
                     Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
                     carTransform.rotation = Quaternion.Lerp(carTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
                 }
-
-                yield return null;
             }
-
-            carTransform.anchoredPosition = targetPosition;
+            else 
+            {
+                carTransform.anchoredPosition = targetPosition;
+                CurrentIndex++;
+            }
         }
-
-        isMoving = false;
+ 
     }
 }
 
