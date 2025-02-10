@@ -8,7 +8,7 @@ public class EditAlphaValue : MonoBehaviour
     [Header("Custom Property")]
     [SerializeField] float AlphaValueChangeSpeed;
     [SerializeField] bool IsLoop = false;
-    [SerializeField] bool IsReverse = false;
+    [SerializeField] public bool IsReverse = false;
 
     Image targetImage;
     Color color;

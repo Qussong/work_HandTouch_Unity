@@ -8,43 +8,60 @@ public class BiggerAndRemoveScript : MonoBehaviour
     [Header("Custom Property")]
     [SerializeField] float maxScale;
     [SerializeField] float scaleChangeSpeed;
-    [SerializeField] float RemoveSpeed;
+    [SerializeField] float Delay;
+    [SerializeField] EditAlphaValue editAlphaValue;
 
     Image targetImage;
-    Color color;
     float initialScale;
-    float Timer;
+    float timer;
+    float delayTimer;
+    bool dontPlay = false;
 
     void Start()
     {
         targetImage = GetComponent<Image>();
+        editAlphaValue = GetComponent<EditAlphaValue>();
         initialScale = targetImage.transform.localScale.x;
-        color = targetImage.color;
+        delayTimer = 0.0f;
     }
 
 
     void Update()
     {
-        if (targetImage.enabled)
+        if (dontPlay) 
         {
-            Timer += Time.deltaTime;
+            delayTimer += Time.deltaTime;
 
-            float scale = Mathf.Lerp(initialScale, maxScale, Timer * scaleChangeSpeed);
-            color.a -= Timer * RemoveSpeed;
+            if (delayTimer > Delay) 
+            {
+                dontPlay = false;
+            }
+            return;
+        }
+
+        if (targetImage.enabled && transform.localScale.x < maxScale)
+        {
+            timer += Time.deltaTime;
+
+            float scale = Mathf.Lerp(initialScale, maxScale, timer * scaleChangeSpeed);
             transform.localScale = new Vector3(scale, scale, scale);
-            targetImage.color = color;
+
+            if (transform.localScale.x >= maxScale && Delay > 0)
+            {
+                dontPlay = true;
+            }
+            
         }
         else
         {
             ResetData();
+            editAlphaValue.ResetAlpha();
         }
     }
 
     void ResetData()
     {
         transform.localScale = new Vector3(initialScale, initialScale, initialScale);
-        color.a = 1;
-        Timer = 0;
-        targetImage.color = color;
+        timer = 0;
     }
 }
