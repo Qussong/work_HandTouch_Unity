@@ -18,9 +18,6 @@ public class MoveLerp : MonoBehaviour
             Debug.Log("RectTransform is not setting.");
             return;
         }
-
-        destination = new Vector3(0.0f, rectTransform.localPosition.y, rectTransform.localPosition.z);
-        speed = 1.0f;
     }
 
     void Update()
