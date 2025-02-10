@@ -208,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06efbf66a3b4104dbf86317565cc2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   effectDuration: 0
   effectTimer: 0
 --- !u!1 &490734693
@@ -962,8 +961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ccfbf4b3403db499b17706a450525c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  effectDuration: 0
+  effectDuration: 2
   effectTimer: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

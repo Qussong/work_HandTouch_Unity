@@ -392,6 +392,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05970c88a3b2d145a0bd18bc3e36b62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points:
+  - {x: 0, y: 0, z: 0}
+  - {x: 50, y: 150, z: 0}
+  - {x: 200, y: 200, z: 0}
+  - {x: 150, y: 50, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: -50, y: -150, z: 0}
+  - {x: -200, y: -200, z: 0}
+  - {x: -150, y: -50, z: 0}
+  - {x: 0, y: 0, z: 0}
+  startPoint: {x: 0, y: 0, z: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  duration: 3
+  ratio: 0
+  time: 0
 --- !u!1 &661375182
 GameObject:
   m_ObjectHideFlags: 0
