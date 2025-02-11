@@ -9,11 +9,14 @@ public class longerAndShorter : MonoBehaviour
     [SerializeField] float maxHeight;
     [SerializeField] float minHeight;
     [SerializeField] float speed;
+    [SerializeField] bool IsLoop;
 
     Image targetImage;
     RectTransform barRectTransform;
     Vector2 initialzePosition;
     Vector2 initialzeHeight;
+    bool DontMove;
+    float t;
 
     void Awake()
     {
@@ -25,10 +28,31 @@ public class longerAndShorter : MonoBehaviour
 
     void Update()
     {
-        if (targetImage.enabled)
+        if (IsLoop) 
         {
-            float Height = Mathf.Lerp(minHeight, maxHeight, Mathf.PingPong(Time.time * speed, 1));
-            barRectTransform.sizeDelta = new Vector2(initialzeHeight.x, Height);
+            DontMove = false;
+        }
+
+
+        if (targetImage.enabled && !DontMove)
+        {
+            if (IsLoop)
+            {
+                t = Mathf.PingPong(Time.time * speed, 1);
+            }
+            else 
+            {
+                t += Time.deltaTime * speed;
+            }
+
+            float Height = Mathf.Lerp(minHeight, maxHeight, t);
+            Debug.Log(Height);
+            barRectTransform.sizeDelta = new Vector2(barRectTransform.sizeDelta.x, Height);
+
+            if (barRectTransform.sizeDelta.y > maxHeight) 
+            {
+                DontMove = true;
+            }
         }
         else 
         {
