@@ -614,8 +614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 1068, y: 96, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 1
-  startTime: 0
+  smoothTime: 2.5
+  startTime: 1
   timer: 0
 --- !u!114 &257935942
 MonoBehaviour:
@@ -631,7 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 2
+  startTime: 3
 --- !u!114 &257935943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 0
+  startTime: 1
 --- !u!114 &257935944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,8 +866,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: -666, y: 160, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 1
-  startTime: 0
+  smoothTime: 2
+  startTime: 2.5
   timer: 0
 --- !u!114 &302781712
 MonoBehaviour:
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3
+  startTime: 6.5
 --- !u!114 &302781713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 0
+  startTime: 2.5
 --- !u!114 &302781714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +950,7 @@ GameObject:
   - component: {fileID: 328662474}
   - component: {fileID: 328662473}
   - component: {fileID: 328662472}
+  - component: {fileID: 328662476}
   m_Layer: 5
   m_Name: 4_CollisionEffect
   m_TagString: Untagged
@@ -1005,7 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 1
+  startTime: 2.5
 --- !u!114 &328662474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,6 +1045,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328662470}
   m_CullTransparentMesh: 1
+--- !u!114 &328662476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328662470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934abf48c940b034a9953613ac28d02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 1.2
+  scaleChangeSpeed: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,9 +1629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06efbf66a3b4104dbf86317565cc2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectDuration: 1
+  effectDuration: 2
   effectTimer: 0
-  startTime: 0
+  startTime: 1
 --- !u!114 &476376887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1816,8 +1831,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 1065, y: 96, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 1
-  startTime: 3
+  smoothTime: 2.5
+  startTime: 7
   timer: 0
 --- !u!114 &555212949
 MonoBehaviour:
@@ -1833,7 +1848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 5
+  startTime: 9
 --- !u!114 &555212950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1848,7 +1863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3
+  startTime: 7
 --- !u!114 &555212951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3173,7 +3188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 219.2241, y: 288.91687}
+  m_AnchoredPosition: {x: 243.78, y: 270.08}
   m_SizeDelta: {x: 107.5529, y: 51.5958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851000733
@@ -3188,10 +3203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8402fa34719e945a8dfe3465352f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: -440, y: 345, z: 0}
+  destination: {x: -477, y: 423, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 1
-  startTime: 0
+  smoothTime: 2
+  startTime: 5
   timer: 0
 --- !u!114 &851000734
 MonoBehaviour:
@@ -3207,7 +3222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3
+  startTime: 7
 --- !u!114 &851000735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3222,7 +3237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 0
+  startTime: 5
 --- !u!114 &851000736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4140,7 +4155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: -236.9, y: -35.7, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 0.4
+  smoothTime: 1
   startTime: 0
   timer: 0
 --- !u!114 &1070466114
@@ -5916,9 +5931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06efbf66a3b4104dbf86317565cc2ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectDuration: 1
+  effectDuration: 2
   effectTimer: 0
-  startTime: 0
+  startTime: 0.5
 --- !u!114 &1732926661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6121,10 +6136,10 @@ RectTransform:
   m_Children:
   - {fileID: 1732926658}
   - {fileID: 476376884}
+  - {fileID: 302781710}
+  - {fileID: 851000732}
   - {fileID: 1857174422}
   - {fileID: 1899805056}
-  - {fileID: 851000732}
-  - {fileID: 302781710}
   - {fileID: 1669307857}
   m_Father: {fileID: 1671450568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6442,8 +6457,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: 1068, y: 91, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 1
-  startTime: 1.5
+  smoothTime: 2.5
+  startTime: 4
   timer: 0
 --- !u!114 &1849161590
 MonoBehaviour:
@@ -6459,7 +6474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3.5
+  startTime: 6
 --- !u!114 &1849161591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6474,7 +6489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 1.5
+  startTime: 4
 --- !u!114 &1849161592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6566,7 +6581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3
+  startTime: 6
 --- !u!114 &1857174424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6581,7 +6596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 0
+  startTime: 6
 --- !u!114 &1857174425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6672,7 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934abf48c940b034a9953613ac28d02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScale: 1.5
+  maxScale: 1.3
   scaleChangeSpeed: 1
 --- !u!114 &1899805058
 MonoBehaviour:
@@ -6688,7 +6703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 3
+  startTime: 5
 --- !u!114 &1899805059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6703,7 +6718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectDuration: 1
   effectTimer: 0
-  startTime: 0
+  startTime: 6.5
 --- !u!114 &1899805060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6964,7 +6979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {x: -381, y: -31, z: 0}
   speed: {x: 0, y: 0, z: 0}
-  smoothTime: 0.4
+  smoothTime: 1
   startTime: 0
   timer: 0
 --- !u!114 &1975611134
