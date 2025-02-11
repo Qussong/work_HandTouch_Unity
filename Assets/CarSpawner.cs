@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Mono.Cecil;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,16 +21,19 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] GameObject RedCarPath;
     [SerializeField] GameObject BlueCarPath;
     [SerializeField] CarType Type;
+    [SerializeField] float delay;
 
     RectTransform[] CarPath;
     Image targetImage;
     float SpawnTimer;
     List<GameObject> SpwanedCar;
     public bool isStart;
+    int currentIndex;
 
     private void Start()
     {
         targetImage = GetComponent<Image>();
+        SpwanedCar = new List<GameObject>();
 
         switch (Type)
         {
@@ -58,6 +62,8 @@ public class CarSpawner : MonoBehaviour
 
             if (SpawnTimer > SpawnTime)
             {
+                Debug.Log("SpawnTimer Is End");
+                SpawnTimer = 0.0f;
                 SpawnCar();
             }
         }
@@ -65,14 +71,77 @@ public class CarSpawner : MonoBehaviour
 
     void SpawnCar() 
     {
+        if (currentIndex -2 <= 0)
+        {
+            isStart = false;
+        }
+
+        Debug.Log("Start Spawn");
         GameObject gameObject = Instantiate(CarPrefabs[(int)Type], transform);
+
+        if (Type == CarType.Red)
+        {
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+        else
+        {
+            gameObject.transform.rotation = transform.rotation;
+        }
         SpwanedCar.Add(gameObject);
+
         MoveToDestinationScript moveToDestinationScript = gameObject.GetComponent<MoveToDestinationScript>();
-        
+        moveToDestinationScript.wayPointTransforms = CarPath;
+        moveToDestinationScript.IsStart = true;
+        moveToDestinationScript.delay = delay;
+
+        if (Type == CarType.Black) 
+        {
+            if(currentIndex == 8 || currentIndex == 5)
+            currentIndex--;
+        }
+
+        moveToDestinationScript.EndIndex = currentIndex;
+        currentIndex--;
+
     }
 
     void InitCarPath(GameObject PathParent) 
     {
+        Debug.Log("Init Car Path");
         CarPath = PathParent.GetComponentsInChildren<RectTransform>();
+        currentIndex = CarPath.Length;
+    }
+
+    public void DestoryAllCar() 
+    {
+        if (SpwanedCar.Count <= 0)
+            return;
+
+       foreach (var car in SpwanedCar)
+        {
+            MoveToDestinationScript moveToDestinationScript = car.GetComponent<MoveToDestinationScript>();
+
+            if (moveToDestinationScript != null)
+            {
+                moveToDestinationScript.DiableEditAlphaValue();
+            }
+
+            Destroy(car.gameObject);
+        }
+
+        SpwanedCar.Clear();
+        currentIndex = CarPath.Length;
+    }
+
+    public void EnableChangeAlphaValue() 
+    {
+        if (SpwanedCar.Count <= 0)
+            return;
+
+        foreach (var car in SpwanedCar)
+        {
+            MoveToDestinationScript moveToDestinationScript = car.GetComponent<MoveToDestinationScript>();
+            moveToDestinationScript.EnableEditAlphaValue();
+        }
     }
 }
