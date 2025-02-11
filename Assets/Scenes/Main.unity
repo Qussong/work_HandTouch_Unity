@@ -10779,16 +10779,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784087302357447358}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99678457, w: -0.080128856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4647559004164352650}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 189.192}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258, y: 35}
+  m_AnchoredPosition: {x: 273.9, y: 31.6}
   m_SizeDelta: {x: 1061, y: 555}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4491737774753163644
@@ -11447,7 +11447,6 @@ GameObject:
   - component: {fileID: 4415089252081230103}
   - component: {fileID: 4371647398685285621}
   - component: {fileID: 2598825185017475081}
-  - component: {fileID: 7778461520997607628}
   - component: {fileID: 3307583605028790519}
   - component: {fileID: 5820372748752172808}
   m_Layer: 5
@@ -11551,10 +11550,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AlphaValueChangeSpeed: 0.3
-  IsLoop: 0
-  IsReverse: 1
+  IsLoop: 1
+  IsReverse: 0
   Delay: 0
-  StartTime: 0
+  StartTime: 1
 --- !u!224 &5859023207555668723
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13263,22 +13262,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7778461520997607628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5784087302357447358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c607b7b6e14dc4d8aeffb6948e2a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxScale: 0.3
-  scaleChangeSpeed: 0.25
-  Delay: 0
-  editAlphaValue: {fileID: 0}
 --- !u!1 &7790875956884694750
 GameObject:
   m_ObjectHideFlags: 0
