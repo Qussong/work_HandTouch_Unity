@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.749268, y: -44}
-  m_SizeDelta: {x: 159.1185, y: 30.0891}
+  m_AnchoredPosition: {x: 34.7, y: -42.9}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &84224821
 MonoBehaviour:
@@ -180,10 +180,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84224819}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -234,8 +234,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &89759090
 MonoBehaviour:
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &89759091
 MonoBehaviour:
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &103564845
 MonoBehaviour:
@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &103564846
 MonoBehaviour:
@@ -538,7 +538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aba53d69d5ef1047b21bc814c8c8fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonActionFlags: 0000000000
+  buttons:
+  - {fileID: 84224821}
+  - {fileID: 2090669259}
+  - {fileID: 1791240828}
+  - {fileID: 693076967}
+  - {fileID: 1839939408}
   buttonActionImages:
   - {fileID: 1814424679}
   - {fileID: 1944748008}
@@ -630,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &257935943
 MonoBehaviour:
@@ -645,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 1
 --- !u!114 &257935944
 MonoBehaviour:
@@ -757,7 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &290801264
 MonoBehaviour:
@@ -772,7 +777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &290801265
 MonoBehaviour:
@@ -882,7 +887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 6.5
 --- !u!114 &302781713
 MonoBehaviour:
@@ -897,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 2.5
 --- !u!114 &302781714
 MonoBehaviour:
@@ -990,7 +995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &328662473
 MonoBehaviour:
@@ -1005,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 2.5
 --- !u!114 &328662474
 MonoBehaviour:
@@ -1246,7 +1251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1391,7 +1396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &388064033
 MonoBehaviour:
@@ -1406,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &388064034
 MonoBehaviour:
@@ -1615,7 +1620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &476376886
 MonoBehaviour:
@@ -1630,7 +1635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 2
-  effectTimer: 0
+  timer: 0
   startTime: 1
 --- !u!114 &476376887
 MonoBehaviour:
@@ -1722,7 +1727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &534577330
 MonoBehaviour:
@@ -1737,7 +1742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &534577331
 MonoBehaviour:
@@ -1847,7 +1852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 9
 --- !u!114 &555212950
 MonoBehaviour:
@@ -1862,7 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 7
 --- !u!114 &555212951
 MonoBehaviour:
@@ -1974,7 +1979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &668252276
 MonoBehaviour:
@@ -1989,7 +1994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &668252277
 MonoBehaviour:
@@ -2100,8 +2105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 862.3, y: 45.406982}
-  m_SizeDelta: {x: 159.1185, y: 30.0891}
+  m_AnchoredPosition: {x: 859.65326, y: 47.759888}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693076967
 MonoBehaviour:
@@ -2125,10 +2130,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2166,7 +2171,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693076965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2179,7 +2184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2252,6 +2257,7 @@ MonoBehaviour:
   startTime: 0
   duration: 10
   timer: 0
+  buttonNum: 3
 --- !u!1 &772114096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &772114099
 MonoBehaviour:
@@ -2319,7 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &772114100
 MonoBehaviour:
@@ -2411,7 +2417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &783521894
 MonoBehaviour:
@@ -2426,7 +2432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &783521895
 MonoBehaviour:
@@ -2523,7 +2529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Num10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2654,7 +2660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &804853450
 MonoBehaviour:
@@ -2669,7 +2675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &804853451
 MonoBehaviour:
@@ -2776,7 +2782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &814700881
 MonoBehaviour:
@@ -2791,7 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &814700882
 MonoBehaviour:
@@ -2888,7 +2894,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Num3
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -3021,7 +3027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &829714653
 MonoBehaviour:
@@ -3036,7 +3042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &829714654
 MonoBehaviour:
@@ -3126,7 +3132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3221,7 +3227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 7
 --- !u!114 &851000735
 MonoBehaviour:
@@ -3236,7 +3242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 5
 --- !u!114 &851000736
 MonoBehaviour:
@@ -3328,7 +3334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &895073883
 MonoBehaviour:
@@ -3343,7 +3349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 1.5
 --- !u!114 &895073884
 MonoBehaviour:
@@ -3435,7 +3441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &895447759
 MonoBehaviour:
@@ -3450,7 +3456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 7.5
 --- !u!114 &895447760
 MonoBehaviour:
@@ -3634,7 +3640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &951830140
 MonoBehaviour:
@@ -3649,7 +3655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &951830141
 MonoBehaviour:
@@ -3781,7 +3787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1020812741
 MonoBehaviour:
@@ -3796,7 +3802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1020812742
 MonoBehaviour:
@@ -3908,7 +3914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1028059377
 MonoBehaviour:
@@ -3923,7 +3929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1028059378
 MonoBehaviour:
@@ -4020,7 +4026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Num6
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -4171,7 +4177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1070466115
 MonoBehaviour:
@@ -4186,7 +4192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1070466116
 MonoBehaviour:
@@ -4332,7 +4338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1211578024
 MonoBehaviour:
@@ -4347,7 +4353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1211578025
 MonoBehaviour:
@@ -4439,7 +4445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1223385538
 MonoBehaviour:
@@ -4454,7 +4460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1223385539
 MonoBehaviour:
@@ -4546,7 +4552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1259798582
 MonoBehaviour:
@@ -4561,7 +4567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3.5
 --- !u!114 &1259798583
 MonoBehaviour:
@@ -4658,7 +4664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Num2
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -4806,7 +4812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1417038083
 MonoBehaviour:
@@ -4821,7 +4827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1417038084
 MonoBehaviour:
@@ -4928,7 +4934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1457745263
 MonoBehaviour:
@@ -4943,7 +4949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1457745264
 MonoBehaviour:
@@ -5150,7 +5156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Num4
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -5298,7 +5304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1582521174
 MonoBehaviour:
@@ -5313,7 +5319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1582521175
 MonoBehaviour:
@@ -5408,6 +5414,7 @@ MonoBehaviour:
   startTime: 0
   duration: 10
   timer: 0
+  buttonNum: 4
 --- !u!1 &1600125748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5460,7 +5467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1600125751
 MonoBehaviour:
@@ -5475,7 +5482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1600125752
 MonoBehaviour:
@@ -5565,7 +5572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5589,6 +5596,128 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621722600}
+  m_CullTransparentMesh: 1
+--- !u!1 &1638277277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1638277278}
+  - component: {fileID: 1638277283}
+  - component: {fileID: 1638277282}
+  - component: {fileID: 1638277281}
+  - component: {fileID: 1638277280}
+  - component: {fileID: 1638277279}
+  m_Layer: 5
+  m_Name: 3_Twinkle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1638277278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1944748009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -59.4, y: 256.73}
+  m_SizeDelta: {x: 21.9416, y: 31.5651}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1638277279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934abf48c940b034a9953613ac28d02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxScale: 1.2
+  scaleChangeSpeed: 1
+--- !u!114 &1638277280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ccfbf4b3403db499b17706a450525c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectDuration: 1
+  timer: 0
+  startTime: 3
+--- !u!114 &1638277281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06efbf66a3b4104dbf86317565cc2ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectDuration: 1
+  timer: 0
+  startTime: 1
+--- !u!114 &1638277282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 02b43517193c8fe43b8d0f59b70daa19, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1638277283
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638277277}
   m_CullTransparentMesh: 1
 --- !u!1 &1669307856
 GameObject:
@@ -5642,7 +5771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1669307859
 MonoBehaviour:
@@ -5657,7 +5786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1669307860
 MonoBehaviour:
@@ -5882,7 +6011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1679649038
 MonoBehaviour:
@@ -5897,7 +6026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1679649039
 MonoBehaviour:
@@ -5989,7 +6118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1732926660
 MonoBehaviour:
@@ -6004,7 +6133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 2
-  effectTimer: 0
+  timer: 0
   startTime: 0.5
 --- !u!114 &1732926661
 MonoBehaviour:
@@ -6080,8 +6209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326, y: -368}
-  m_SizeDelta: {x: 159.1185, y: 30.0891}
+  m_AnchoredPosition: {x: -331.4, y: -361.6}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791240828
 MonoBehaviour:
@@ -6105,10 +6234,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6146,7 +6275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791240826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6159,7 +6288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6235,6 +6364,7 @@ MonoBehaviour:
   startTime: 0
   duration: 10
   timer: 0
+  buttonNum: 0
 --- !u!1 &1827821656
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,7 +6417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1827821659
 MonoBehaviour:
@@ -6302,7 +6432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 0.7
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1827821660
 MonoBehaviour:
@@ -6378,8 +6508,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 947.6, y: -364}
-  m_SizeDelta: {x: 159.1185, y: 30.0891}
+  m_AnchoredPosition: {x: 942.2, y: -359.14}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839939408
 MonoBehaviour:
@@ -6403,10 +6533,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6444,7 +6574,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839939406}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6457,7 +6587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6545,7 +6675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 6
 --- !u!114 &1849161591
 MonoBehaviour:
@@ -6560,7 +6690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 4
 --- !u!114 &1849161592
 MonoBehaviour:
@@ -6652,7 +6782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 6
 --- !u!114 &1857174424
 MonoBehaviour:
@@ -6667,7 +6797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 6
 --- !u!114 &1857174425
 MonoBehaviour:
@@ -6774,7 +6904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 5
 --- !u!114 &1899805059
 MonoBehaviour:
@@ -6789,7 +6919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 6.5
 --- !u!114 &1899805060
 MonoBehaviour:
@@ -6881,7 +7011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1904473659
 MonoBehaviour:
@@ -6896,7 +7026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 1
 --- !u!114 &1904473660
 MonoBehaviour:
@@ -6968,6 +7098,7 @@ RectTransform:
   - {fileID: 1211578021}
   - {fileID: 1679649035}
   - {fileID: 1996301744}
+  - {fileID: 1638277278}
   - {fileID: 290801261}
   - {fileID: 829714651}
   - {fileID: 804853448}
@@ -6997,6 +7128,7 @@ MonoBehaviour:
   startTime: 0
   duration: 10
   timer: 0
+  buttonNum: 1
 --- !u!1 &1975611131
 GameObject:
   m_ObjectHideFlags: 0
@@ -7067,7 +7199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1975611135
 MonoBehaviour:
@@ -7082,7 +7214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 0
 --- !u!114 &1975611136
 MonoBehaviour:
@@ -7224,7 +7356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &1996301747
 MonoBehaviour:
@@ -7239,7 +7371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 1
 --- !u!114 &1996301748
 MonoBehaviour:
@@ -7341,6 +7473,7 @@ MonoBehaviour:
   startTime: 0
   duration: 10
   timer: 0
+  buttonNum: 2
 --- !u!1 &2090669257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7377,8 +7510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -644.5, y: -177.1}
-  m_SizeDelta: {x: 159.1185, y: 30.0891}
+  m_AnchoredPosition: {x: -653.5, y: -169.7}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2090669259
 MonoBehaviour:
@@ -7402,10 +7535,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.39215687}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -7443,7 +7576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090669257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7456,7 +7589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7526,7 +7659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 3
 --- !u!114 &2106218493
 MonoBehaviour:
@@ -7541,7 +7674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDuration: 1
-  effectTimer: 0
+  timer: 0
   startTime: 5.5
 --- !u!114 &2106218494
 MonoBehaviour:
@@ -7739,13 +7872,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4786568910889703046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8165,20 +8298,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8567465175716486970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8434,7 +8567,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8678,7 +8813,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 229, y: -375}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617158581974285169
 MonoBehaviour:
@@ -9058,13 +9193,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807790972468830707}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9428,7 +9563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9590,7 +9725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9943,7 +10078,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10567,7 +10704,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 780, y: -448}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4154378982681702723
 GameObject:
@@ -10747,7 +10884,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 562, y: 183}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4328670831486823175
 MonoBehaviour:
@@ -11043,7 +11180,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -971, y: 170}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4939795851853800494
 RectTransform:
@@ -11506,13 +11643,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7895619395814124009}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12158,7 +12295,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 396, y: -157}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6395391958942706833
 MonoBehaviour:
@@ -12377,13 +12514,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955093739089111311}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14212,7 +14349,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

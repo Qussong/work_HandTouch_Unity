@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public enum EButtonNums
 { 
-    TWO = 0,
+    None = -1,
+    TWO,
     THREE, 
     FOUR, 
     SIX,
@@ -14,7 +15,8 @@ public enum EButtonNums
 
 public class ButtonActionManager : MonoBehaviour
 {
-    [SerializeField][ReadOnly] private bool[] buttonActionFlags = new bool[5];
+    //[SerializeField][ReadOnly] private bool[] buttonTimeoutFlags = new bool[5];
+    [SerializeField] private List<Button> buttons = new List<Button>();
     [SerializeField] private List<GameObject> buttonActionImages = new List<GameObject>();
 
     private static ButtonActionManager instance = null;
@@ -50,14 +52,16 @@ public class ButtonActionManager : MonoBehaviour
     public void ButtonAction_Two()
     {
         Debug.Log("Call Button TWO");
-        buttonActionFlags[(int)EButtonNums.TWO] = true;        GameObject triggerObj = buttonActionImages[(int)EButtonNums.TWO];
+        buttons[(int)EButtonNums.TWO].interactable = false;
+        GameObject triggerObj = buttonActionImages[(int)EButtonNums.TWO];
         triggerObj.SetActive(true);
+        
     }
 
     public void ButtonAction_Three()
     {
         Debug.Log("Call Button THREE");
-        buttonActionFlags[(int)EButtonNums.THREE] = true;
+        buttons[(int)EButtonNums.THREE].interactable = false;
         GameObject triggerObj = buttonActionImages[(int)EButtonNums.THREE];
         triggerObj.SetActive(true);
     }
@@ -65,7 +69,7 @@ public class ButtonActionManager : MonoBehaviour
     public void ButtonAction_Four()
     {
         Debug.Log("Call Button FOUR");
-        buttonActionFlags[(int)EButtonNums.FOUR] = true;
+        buttons[(int)EButtonNums.FOUR].interactable = false;
         GameObject triggerObj = buttonActionImages[(int)EButtonNums.FOUR];
         triggerObj.SetActive(true);
     }
@@ -73,7 +77,7 @@ public class ButtonActionManager : MonoBehaviour
     public void ButtonAction_Six()
     {
         Debug.Log("Call Button SIX");
-        buttonActionFlags[(int)EButtonNums.SIX] = true;
+        buttons[(int)EButtonNums.SIX].interactable = false;
         GameObject triggerObj = buttonActionImages[(int)EButtonNums.SIX];
         triggerObj.SetActive(true);
     }
@@ -81,8 +85,23 @@ public class ButtonActionManager : MonoBehaviour
     public void ButtonAction_Ten()
     {
         Debug.Log("Call Button TEN");
-        buttonActionFlags[(int)EButtonNums.TEN] = true;
+        buttons[(int)EButtonNums.TEN].interactable = false;
         GameObject triggerObj = buttonActionImages[(int)EButtonNums.TEN];
         triggerObj.SetActive(true);
     }
+
+    public void SetActive(EButtonNums buttonNum)
+    {
+        buttons[(int)buttonNum].interactable = true;
+    }
+
+    /*public bool GetTimeout(EButtonNums buttonNum)
+    {
+        return buttonTimeoutFlags[(int)buttonNum];
+    }
+
+    public void SetTimeout(EButtonNums buttonNum, bool flag)
+    {
+        buttonTimeoutFlags[(int)buttonNum] = flag;
+    }*/
 }

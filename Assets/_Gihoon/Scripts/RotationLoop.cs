@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RotationLoop : MonoBehaviour
+public class RotationLoop : MonoBehaviour, GHScriptLayout
 {
     [Header("Properties")]
     public float startTime = 0.0f;
@@ -14,6 +14,8 @@ public class RotationLoop : MonoBehaviour
     [ReadOnly] public float pendulumTimer = 0.0f;
 
     Vector3 direction = Vector3.back;
+
+    bool bFinish = false;
 
     void Start()
     {
@@ -40,5 +42,16 @@ public class RotationLoop : MonoBehaviour
                 GetComponent<RectTransform>().RotateAround(pivotChild.transform.position, direction, rotateAngle * Time.deltaTime);
             }
         }
+    }
+
+    public void Reset()
+    {
+        timer = 0.0f;
+        bFinish = true;
+    }
+
+    private void OnDisable()
+    {
+        Reset();
     }
 }

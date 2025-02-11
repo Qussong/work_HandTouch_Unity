@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RotationChildPivot : MonoBehaviour
+public class RotationChildPivot : MonoBehaviour, GHScriptLayout
 {
     [Header("Properties")]
     public float startTime = 0.0f;
@@ -14,28 +14,45 @@ public class RotationChildPivot : MonoBehaviour
 
     private Vector3 directionVec = Vector3.forward;
 
+    bool bFinish = false;
+
     void Start()
     {
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > startTime)
+        if(bFinish == false)
         {
-            if (pivotChild == null)
+            timer += Time.deltaTime;
+            if (timer > startTime)
             {
-                GetComponent<RectTransform>().Rotate(directionVec, rotateAngle * Time.deltaTime * rotateSpeed);
-            }
-            else
-            {
-                GetComponent<RectTransform>().RotateAround(pivotChild.transform.position, directionVec, rotateAngle * Time.deltaTime * rotateSpeed);
-            }
+                if (pivotChild == null)
+                {
+                    GetComponent<RectTransform>().Rotate(directionVec, rotateAngle * Time.deltaTime * rotateSpeed);
+                }
+                else
+                {
+                    GetComponent<RectTransform>().RotateAround(pivotChild.transform.position, directionVec, rotateAngle * Time.deltaTime * rotateSpeed);
+                }
 
-            if(timer > (startTime + 1.0f))
-            {
-                this.enabled = false;
+                if(timer > (startTime + 1.0f))
+                {
+                    bFinish = true;
+                    //this.enabled = false;
+                }
             }
         }
+    }
+
+    public void Reset()
+    {
+        timer = 0.0f;
+        bFinish = false;
+    }
+
+    private void OnDisable()
+    {
+        Reset();
     }
 }

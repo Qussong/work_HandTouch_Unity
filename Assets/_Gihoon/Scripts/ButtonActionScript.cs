@@ -8,6 +8,7 @@ public class ButtonActionScript : MonoBehaviour
     public float startTime = 0.0f;
     public float duration = 0.0f;
     [SerializeField][ReadOnly] private float timer = 0.0f;
+    public EButtonNums buttonNum = EButtonNums.None;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class ButtonActionScript : MonoBehaviour
                 // end logic
                 timer = 0.0f;
                 gameObject.SetActive(false);
+                ButtonActionManager.Instance.SetActive(buttonNum);
+                //ButtonActionManager.Instance.SetTimeout(buttonNum, true);
             }
         }
     }

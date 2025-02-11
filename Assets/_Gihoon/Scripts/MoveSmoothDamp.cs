@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class MoveSmoothDamp : MonoBehaviour
+public class MoveSmoothDamp : MonoBehaviour, GHScriptLayout
 {
     [Header("Properties")]
     private RectTransform rectTransform;
@@ -14,6 +15,7 @@ public class MoveSmoothDamp : MonoBehaviour
     private Vector3 startPoint = Vector3.zero;
 
     bool bFinish = false;
+    //EButtonNums buttonNum = EButtonNums.None;
 
     void Start()
     {
@@ -25,6 +27,7 @@ public class MoveSmoothDamp : MonoBehaviour
         }
 
         startPoint = rectTransform.localPosition;
+        //buttonNum = GetComponentInParent<ButtonActionScript>().buttonNum;
     }
 
     void Update()
@@ -44,9 +47,19 @@ public class MoveSmoothDamp : MonoBehaviour
         }
     }
 
-    private void Reset()
+    public void Reset()
     {
-        rectTransform.localPosition = startPoint;
+        if (rectTransform == null) return;
+
+        Debug.Log("Move Smooth Damp Reset");
         timer = 0.0f;
+        rectTransform.localPosition = startPoint;
+        bFinish = false;
+        //ButtonActionManager.Instance.SetTimeout(buttonNum, false);
+    }
+
+    private void OnDisable()
+    {
+        Reset();
     }
 }
