@@ -11,76 +11,98 @@ public class MoveToDestinationScript : MonoBehaviour
     [SerializeField] RectTransform carTransform;
     [SerializeField] float moveSpeed = 1.0f;
     [SerializeField] float rotationSpeed = 10f;
+    public float delay;
     public int index_WaitPoint;
 
     [Header("Waypoints")]
     [SerializeField] public RectTransform[] wayPointTransforms;
-    public int currentWaypointIndex;
 
     [Header("etc")]
     [SerializeField] public EditAlphaValue editAlphaValue;
+    List<Vector3> waypoints = new List<Vector3>();
 
-    List<Vector2> waypoints = new List<Vector2>();
-
-    [SerializeField] float MoveTime;
-    [SerializeField] int EndIndex;
+    [SerializeField] float MoveTime = 1.0f;
+    [SerializeField] public int EndIndex;
     [SerializeField] int CurrentIndex = 0;
+    public bool IsStart = false;
 
     float MoveTimer;
+    float delayTimer;
+    bool dontMove = false;
 
     void Start()
     {
+        Debug.Log("Start");
         carTransform = GetComponent<RectTransform>();
         editAlphaValue = GetComponent<EditAlphaValue>();
 
         foreach (var wp in wayPointTransforms)
         {
-            waypoints.Add(wp.anchoredPosition);
+            wp.SetParent(carTransform.parent);
+            waypoints.Add(wp.localPosition);
         }
     }
 
     void Update()
     {
+        if (!IsStart)
+            return;
+
+        if (dontMove) 
+            return;
+
         MoveTimer += Time.deltaTime;
 
-        if (MoveTimer > MoveTime) 
+        if (MoveTimer > MoveTime)
         {
-            MoveNextPointCoroutine();
+            MoveNextPoint();
             MoveTimer = 0;
         }
     }
 
-    public void MoveNextPointCoroutine()
+    public void MoveNextPoint()
     {
         if (CurrentIndex >= EndIndex)
         {
-            Destroy(gameObject);
+            dontMove = true;
+            return;
         }
-        else 
+
+        Vector3 targetPosition = waypoints[CurrentIndex];
+
+        if (Vector3.Distance(carTransform.localPosition, targetPosition) > 0.5f)
         {
-            Vector2 targetPosition = waypoints[currentWaypointIndex];
+            carTransform.localPosition = Vector3.MoveTowards(carTransform.localPosition, targetPosition, moveSpeed * Time.deltaTime);
 
-            if (Vector2.Distance(carTransform.anchoredPosition, targetPosition) > 1.0f)
+            Vector3 direction = targetPosition - carTransform.localPosition;
+            if (direction != Vector3.zero)
             {
-                carTransform.anchoredPosition = Vector2.MoveTowards(carTransform.anchoredPosition, targetPosition,
-                    moveSpeed * Time.deltaTime);
-
-                Vector2 direction = targetPosition - carTransform.anchoredPosition;
-
-                if (direction != Vector2.zero)
-                {
-                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                    Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-                    carTransform.rotation = Quaternion.Lerp(carTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-                }
-            }
-            else 
-            {
-                carTransform.anchoredPosition = targetPosition;
-                CurrentIndex++;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+                carTransform.rotation = Quaternion.RotateTowards(carTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime * 100);
             }
         }
- 
+        else
+        {
+            carTransform.localPosition = targetPosition;
+            CurrentIndex++;
+
+            if (delay > 0)
+            {
+                dontMove = true;
+            }
+        }
+
+    }
+
+    public void EnableEditAlphaValue() 
+    {
+        editAlphaValue.enabled = true;
+    }
+
+    public void DiableEditAlphaValue()
+    {
+        editAlphaValue.enabled = false;
     }
 }
 

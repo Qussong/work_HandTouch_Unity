@@ -9,10 +9,19 @@ public class EditAlphaValue : MonoBehaviour
     [SerializeField] float AlphaValueChangeSpeed;
     [SerializeField] bool IsLoop = false;
     [SerializeField] public bool IsReverse = false;
+    [SerializeField] float Delay;
+    [SerializeField] float StartTime;
 
     Image targetImage;
     Color color;
-    bool increasingAlpha; 
+    bool increasingAlpha;
+    bool DontMove = false;
+    float DelayTimer = 0;
+
+    private void OnDisable()
+    {
+        ResetAlpha();
+    }
 
     void Awake()
     {
@@ -41,7 +50,20 @@ public class EditAlphaValue : MonoBehaviour
             return;
         }
 
+        if (DontMove) 
+        {
+            DelayTimer += Time.deltaTime;
+
+            if (DelayTimer > Delay)
+            {
+                DelayTimer = 0;
+                DontMove = false;
+            }
+            
+        }
+
         ChangeAlphaValue();
+
     }
 
     void ChangeAlphaValue()
@@ -53,10 +75,16 @@ public class EditAlphaValue : MonoBehaviour
                 if (increasingAlpha)
                 {
                     color.a += Time.deltaTime * AlphaValueChangeSpeed;
+
                     if (color.a >= 1f)
                     {
                         color.a = 1f;
                         increasingAlpha = false;
+
+                        if (Delay > 0) 
+                        {
+                            DontMove = true;
+                        }
                     }
                 }
                 else
@@ -66,6 +94,11 @@ public class EditAlphaValue : MonoBehaviour
                     {
                         color.a = 0f;
                         increasingAlpha = true;
+
+                        if (Delay > 0)
+                        {
+                            DontMove = true;
+                        }
                     }
                 }
             }
@@ -78,6 +111,11 @@ public class EditAlphaValue : MonoBehaviour
                     {
                         color.a = 1f;
                         increasingAlpha = false;
+
+                        if (Delay > 0)
+                        {
+                            DontMove = true;
+                        }
                     }
                 }
                 else
@@ -87,6 +125,11 @@ public class EditAlphaValue : MonoBehaviour
                     {
                         color.a = 0f;
                         increasingAlpha = true;
+
+                        if (Delay > 0)
+                        {
+                            DontMove = true;
+                        }
                     }
                 }
             }
@@ -99,6 +142,11 @@ public class EditAlphaValue : MonoBehaviour
                 {
                     color.a -= Time.deltaTime * AlphaValueChangeSpeed;
                     color.a = Mathf.Clamp01(color.a);
+
+                    if (Delay > 0 && color.a >= 1.0)
+                    {
+                        DontMove = true;
+                    }
                 }
             }
             else 
@@ -107,6 +155,11 @@ public class EditAlphaValue : MonoBehaviour
                 {
                     color.a += Time.deltaTime * AlphaValueChangeSpeed;
                     color.a = Mathf.Clamp01(color.a);
+                }
+
+                if (Delay > 0 && color.a <= 0.0f)
+                {
+                    DontMove = true;
                 }
             }
         }

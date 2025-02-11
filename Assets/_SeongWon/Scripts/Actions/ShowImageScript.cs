@@ -14,6 +14,7 @@ public class ShowImageScript : MonoBehaviour, ActionScriptInterface
 
     Image targetImage;
     float timer = 0;
+    bool IsPlay = false;
     public bool StartTimer = false;
 
     void Awake()
@@ -36,6 +37,7 @@ public class ShowImageScript : MonoBehaviour, ActionScriptInterface
                 targetImage.enabled = false;
                 StartTimer = false;
                 timer = 0;
+                IsPlay = false;
             }
         }
         
@@ -43,7 +45,10 @@ public class ShowImageScript : MonoBehaviour, ActionScriptInterface
 
     public void StartAction() 
     {
-        StartTimer = true;
+        if (!IsPlay)
+        {
+            StartTimer = true;
+        }
     }
 
 }
