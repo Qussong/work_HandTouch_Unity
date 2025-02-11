@@ -11,6 +11,9 @@ public class MoveSmoothDamp : MonoBehaviour
     public float smoothTime = 1f;
     public float startTime = 0.0f;
     [ReadOnly] public float timer = 0.0f;
+    private Vector3 startPoint = Vector3.zero;
+
+    bool bFinish = false;
 
     void Start()
     {
@@ -20,14 +23,30 @@ public class MoveSmoothDamp : MonoBehaviour
             Debug.Log("Rect Transform is not settings.");
             return;
         }
+
+        startPoint = rectTransform.localPosition;
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer > startTime)
+        if (bFinish == false)
         {
-            rectTransform.localPosition = Vector3.SmoothDamp(rectTransform.localPosition, destination, ref speed, smoothTime);
+            timer += Time.deltaTime;
+            if (timer > startTime)
+            {
+                rectTransform.localPosition = Vector3.SmoothDamp(rectTransform.localPosition, destination, ref speed, smoothTime);
+            }
+
+            if (Vector3.Distance(rectTransform.localPosition, destination) < 1.0f)
+            {
+                bFinish = true;
+            }
         }
+    }
+
+    private void Reset()
+    {
+        rectTransform.localPosition = startPoint;
+        timer = 0.0f;
     }
 }
