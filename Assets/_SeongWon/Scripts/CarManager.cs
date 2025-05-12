@@ -78,6 +78,11 @@ public class CarManager : MonoBehaviour, ActionScriptInterface
         RemoveTimer = 0;
     }
 
+    public void StopAction() 
+    {
+
+    }
+
 }
 
 

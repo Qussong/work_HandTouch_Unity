@@ -51,7 +51,6 @@ public class MoveSmoothDamp : MonoBehaviour, GHScriptLayout
     {
         if (rectTransform == null) return;
 
-        Debug.Log("Move Smooth Damp Reset");
         timer = 0.0f;
         rectTransform.localPosition = startPoint;
         bFinish = false;

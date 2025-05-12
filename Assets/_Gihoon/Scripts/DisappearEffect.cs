@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
+
 //using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +30,21 @@ public class DisappearEffect : MonoBehaviour, GHScriptLayout
             return;
         }
 
-        startColor = target.GetComponent<Image>().color;
+        Image img = target.GetComponent<Image>();
+        TextMeshProUGUI txt = target.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (null != img)
+        {
+            startColor = img.color;
+        }
+        else if (null != txt)
+        {
+            startColor = txt.color;
+        }
+        else
+        {
+            Debug.LogWarning("No Target - AppearEffect");
+        }
 
         //buttonNum = GetComponentInParent<ButtonActionScript>().buttonNum;
     }
@@ -44,8 +60,24 @@ public class DisappearEffect : MonoBehaviour, GHScriptLayout
                 if (timer <= (startTime + effectDuration))
                 {
                     // alpha controller
+                    //target.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
+
                     float alpha = 1.0f - ((timer - startTime) / effectDuration);
-                    target.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
+                    Image img = target.GetComponent<Image>();
+                    TextMeshProUGUI txt = target.GetComponentInChildren<TextMeshProUGUI>();
+
+                    if (null != img)
+                    {
+                        img.color = new Color(1.0f, 1.0f, 1.0f, alpha);
+                    }
+                    else if (null != txt)
+                    {
+                        txt.color = new Color(1.0f, 1.0f, 1.0f, alpha);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No Target - AppearEffect");
+                    }
                 }
                 else
                 {
@@ -60,7 +92,6 @@ public class DisappearEffect : MonoBehaviour, GHScriptLayout
     {
         if (target == null) return;
 
-        Debug.Log("Disappear Effect Reset");
         timer = 0.0f;
         //target.GetComponent<Image>().color = startColor;
         bFinish = false;

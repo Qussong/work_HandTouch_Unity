@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+
+
 //using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,11 +23,24 @@ public class AppearEffect : MonoBehaviour, GHScriptLayout
         target = gameObject;
         if (null == target)
         {
-            Debug.Log("Effect Target is not setting.");
             return;
         }
 
-        target.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        Image img = target.GetComponent<Image>();
+        TextMeshProUGUI txt = target.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (null != img)
+        {
+            img.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        }
+        else if(null != txt)
+        {
+            txt.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        }
+        else
+        {
+            Debug.LogWarning("No Target - AppearEffect");
+        }
 
         //buttonNum = GetComponentInParent<ButtonActionScript>().buttonNum;
     }
@@ -40,8 +56,27 @@ public class AppearEffect : MonoBehaviour, GHScriptLayout
                 if (timer <= (startTime + effectDuration))
                 {
                     // alpha controller
+                    //target.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
+
                     float alpha = ((timer - startTime) / effectDuration);
-                    target.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
+
+                    Image img = target.GetComponent<Image>();
+                    TextMeshProUGUI txt = target.GetComponentInChildren<TextMeshProUGUI>();
+
+                    if (null != img)
+                    {
+                        img.color = new Color(1.0f, 1.0f, 1.0f, alpha);
+                    }
+                    else if (null != txt)
+                    {
+                        txt.color = new Color(1.0f, 1.0f, 1.0f, alpha);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No Target - AppearEffect");
+                    }
+
+
                 }
                 else
                 {
@@ -56,11 +91,27 @@ public class AppearEffect : MonoBehaviour, GHScriptLayout
     {
         if (target == null) return;
 
-        Debug.Log("Apper Effect Reset");
-        timer = 0.0f;
-        target.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
-        bFinish = false;
+        //target.GetComponent<Image>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         //ButtonActionManager.Instance.SetTimeout(buttonNum, false);
+
+        timer = 0.0f;
+        Image img = target.GetComponent<Image>();
+        TextMeshProUGUI txt = target.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (null != img)
+        {
+            img.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        }
+        else if (null != txt)
+        {
+            txt.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        }
+        else
+        {
+            Debug.LogWarning("No Target - AppearEffect");
+        }
+
+        bFinish = false;
     }
 
     private void OnDisable()

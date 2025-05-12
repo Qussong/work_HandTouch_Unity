@@ -94,6 +94,7 @@ public class EditAlphaValue : MonoBehaviour
                     {
                         color.a = 0f;
                         increasingAlpha = true;
+                        AudioManager.instance.PlaySound(ESoundType.Cannon);
 
                         if (Delay > 0)
                         {

@@ -51,4 +51,9 @@ public class ShowImageScript : MonoBehaviour, ActionScriptInterface
         }
     }
 
+    public void StopAction() 
+    {
+        timer = EndTime;
+    }
+
 }

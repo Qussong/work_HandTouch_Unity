@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ActionManager : MonoBehaviour
 {
+
+    [SerializeField] bool IsMain = false;
     [SerializeField] ActionScriptInterface[] actionScripts;
     [SerializeField] Button button;
     [SerializeField] float BlockButtonTime;
@@ -16,9 +18,34 @@ public class ActionManager : MonoBehaviour
         actionScripts = GetComponentsInChildren<ActionScriptInterface>();
     }
 
-    
+    void OnEnable()
+    {
+        if (IsMain) 
+        {
+            for (int i = 0; i < actionScripts.Length; i++)
+            {
+                actionScripts[i].StartAction();
+            }
+        }
+    }
+
+    void OnDisable()
+    {
+        if (IsMain) 
+        {
+            for (int i = 0; i < actionScripts.Length; i++)
+            {
+                actionScripts[i].StartAction();
+            }
+        }
+    }
+
+
     void Update()
     {
+        if (BlockButtonTime <= 0)
+            return;
+
         if (!button.enabled) 
         {
             BlockButtonTimer += Time.deltaTime;

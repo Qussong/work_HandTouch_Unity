@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ActionScriptInterface
 {
     void StartAction();
+    void StopAction();
 }
