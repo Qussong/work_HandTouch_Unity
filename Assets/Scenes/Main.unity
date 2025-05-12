@@ -11903,29 +11903,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1615.5, y: 668.6}
   m_SizeDelta: {x: 38, y: 149}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1478405362463108299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7142493900103404052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f5c5dd336e0c3478bd73f13435442f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarPrefabs:
-  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
-  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
-  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
-  SpawnTime: 0.5
-  BlackCarPath: {fileID: 7765390116165848915}
-  RedCarPath: {fileID: 6045431251255379561}
-  BlueCarPath: {fileID: 9097212593940183125}
-  Type: 0
-  delay: 0
-  isStart: 0
 --- !u!222 &1498667649643893125
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15135,9 +15112,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8968073498917042488}
   - component: {fileID: 180719425631761536}
-  - component: {fileID: 8637174468176542697}
   - component: {fileID: 5203297460559898419}
   - component: {fileID: 6745364454058550443}
+  - component: {fileID: 8968073498917042489}
   m_Layer: 5
   m_Name: BlueCarSpanwer
   m_TagString: Untagged
@@ -15314,9 +15291,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7144745681699529091}
   - component: {fileID: 6201555592777601457}
-  - component: {fileID: 1478405362463108299}
   - component: {fileID: 6335943190683642479}
   - component: {fileID: 1729309033613409950}
+  - component: {fileID: 7144745681699529092}
   m_Layer: 5
   m_Name: BlackCarSpawner
   m_TagString: Untagged
@@ -15343,6 +15320,29 @@ RectTransform:
   m_AnchoredPosition: {x: 995, y: 414}
   m_SizeDelta: {x: 179, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7144745681699529092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142493900103404052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f87d980e2c463c479d2333fe243a48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarPrefabs:
+  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
+  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
+  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
+  SpawnTime: 0.5
+  BlackCarPath: {fileID: 7765390116165848915}
+  RedCarPath: {fileID: 6045431251255379561}
+  BlueCarPath: {fileID: 9097212593940183125}
+  Type: 0
+  delay: 0
+  isStart: 0
 --- !u!224 &7182058598792073581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15617,9 +15617,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carSpawners:
-  - {fileID: 1478405362463108299}
-  - {fileID: 9093203335621463592}
-  - {fileID: 8637174468176542697}
+  - {fileID: 7144745681699529092}
+  - {fileID: 8802109080557631443}
+  - {fileID: 8968073498917042489}
   showImageScript: {fileID: 0}
   RemoveTime: 9
 --- !u!1 &7895619395814124009
@@ -16032,29 +16032,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6088863946755836624}
   m_CullTransparentMesh: 1
---- !u!114 &8637174468176542697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6957245540324018389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f5c5dd336e0c3478bd73f13435442f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarPrefabs:
-  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
-  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
-  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
-  SpawnTime: 0.5
-  BlackCarPath: {fileID: 7765390116165848915}
-  RedCarPath: {fileID: 6045431251255379561}
-  BlueCarPath: {fileID: 9097212593940183125}
-  Type: 2
-  delay: 0
-  isStart: 0
 --- !u!114 &8651149255391115574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16168,9 +16145,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5358635245699305791}
   - component: {fileID: 41391159336669716}
-  - component: {fileID: 9093203335621463592}
   - component: {fileID: 485680457032672709}
   - component: {fileID: 408275640085702882}
+  - component: {fileID: 8802109080557631443}
   m_Layer: 5
   m_Name: RedCarSpanwer
   m_TagString: Untagged
@@ -16178,6 +16155,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8802109080557631443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802109080557631442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f87d980e2c463c479d2333fe243a48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarPrefabs:
+  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
+  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
+  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
+  SpawnTime: 0.5
+  BlackCarPath: {fileID: 7765390116165848915}
+  RedCarPath: {fileID: 6045431251255379561}
+  BlueCarPath: {fileID: 9097212593940183125}
+  Type: 1
+  delay: 0
+  isStart: 0
 --- !u!1 &8811184085321157004
 GameObject:
   m_ObjectHideFlags: 0
@@ -16255,6 +16255,29 @@ RectTransform:
   m_AnchoredPosition: {x: 329.3, y: 354.4}
   m_SizeDelta: {x: 179, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8968073498917042489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957245540324018389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f87d980e2c463c479d2333fe243a48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarPrefabs:
+  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
+  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
+  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
+  SpawnTime: 0.5
+  BlackCarPath: {fileID: 7765390116165848915}
+  RedCarPath: {fileID: 6045431251255379561}
+  BlueCarPath: {fileID: 9097212593940183125}
+  Type: 2
+  delay: 0
+  isStart: 0
 --- !u!114 &9035858000616488550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16315,29 +16338,6 @@ RectTransform:
   m_AnchoredPosition: {x: 265, y: 8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9093203335621463592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8802109080557631442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f5c5dd336e0c3478bd73f13435442f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarPrefabs:
-  - {fileID: 7877493010332194082, guid: 9da8bd1894c75784aa857533b886daa8, type: 3}
-  - {fileID: 7877493010332194082, guid: 5fbc7e1f07fb81c468aa56d882e3fe8e, type: 3}
-  - {fileID: 7877493010332194082, guid: 10ebc28c76725a54ea2d55fcb9a5de1b, type: 3}
-  SpawnTime: 0.5
-  BlackCarPath: {fileID: 7765390116165848915}
-  RedCarPath: {fileID: 6045431251255379561}
-  BlueCarPath: {fileID: 9097212593940183125}
-  Type: 1
-  delay: 0
-  isStart: 0
 --- !u!114 &9096437719966153153
 MonoBehaviour:
   m_ObjectHideFlags: 0
