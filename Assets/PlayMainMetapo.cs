@@ -18,6 +18,9 @@ public class PlayMainMetapo : MonoBehaviour
     private Image[] handimages;
     private bool isAlphazero;
     float delayTimer = 0;
+    float imageDelayTimer = 0;
+    float imageDelayTime = 11.0f;
+    bool stopBlink;
 
     private void Awake()
     {
@@ -26,36 +29,44 @@ public class PlayMainMetapo : MonoBehaviour
         audioSource.Play();
         targetGameObject.SetActive(true);
 
+        stopBlink = false;
         isAlphazero = false;
         handimages = handParentObject.GetComponentsInChildren<Image>();
+        StartBlinkImage();
 
     }
     void Update()
     {
         if (audioSource.isPlaying)
         {
-            StartBlinkImage();
             return;
         }
-        else 
+        else
         {
-            StopBlinkImage();
             targetGameObject.SetActive(false);
         }
 
-            delayTimer += Time.deltaTime;
+        delayTimer += Time.deltaTime;
+        imageDelayTimer += Time.deltaTime;
 
-        if (delayTimer >= delayTime) 
+        if (imageDelayTimer > imageDelayTime)
+        {
+            imageDelayTimer = 0.0f;
+
+            StartBlinkImage();
+        }
+
+        if (delayTimer >= delayTime)
         {
             delayTimer = 0.0f;
             audioSource.Play();
             targetGameObject.SetActive(true);
-        }      
+        }
     }
 
-    public void StopMainMetapo() 
+    public void StopMainMetapo()
     {
-        if (audioSource.isPlaying) 
+        if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }
@@ -63,35 +74,24 @@ public class PlayMainMetapo : MonoBehaviour
         delayTimer = 0.0f;
         audioSource.time = 0.0f;
         targetGameObject.SetActive(false);
-        StopBlinkImage();
     }
 
-    void StartBlinkImage() 
+    public void StartBlinkImage()
     {
         Color color = handimages[0].color;
+        color.a = 0.3f;
 
-        if (!isAlphazero)
-        {
-            color.a -= Time.deltaTime * alhpaChangeSpeed;
-
-            if (color.a <= 0.0f)
-                isAlphazero = true;
-        }
-        else 
-        {
-            color.a += Time.deltaTime * alhpaChangeSpeed;
-
-            if (color.a >= 1.0f)
-                isAlphazero = false;
-        }
+        isAlphazero = true;
 
         foreach (var item in handimages)
         {
             item.color = color;
         }
+
+        imageDelayTimer = 0.0f;
     }
 
-    void StopBlinkImage() 
+    public void StopBlinkImage()
     {
         Color color = handimages[0].color;
         color.a = 0.0f;
@@ -102,5 +102,7 @@ public class PlayMainMetapo : MonoBehaviour
         {
             item.color = color;
         }
+
+        imageDelayTimer = 0.0f;
     }
 }

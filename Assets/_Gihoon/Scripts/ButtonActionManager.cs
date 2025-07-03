@@ -21,6 +21,9 @@ public class ButtonActionManager : MonoBehaviour
 
     private static ButtonActionManager instance = null;
 
+    // Sound Enum
+    public List<ESoundType> soundTypes;
+
     public static ButtonActionManager Instance
     {
         get

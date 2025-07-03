@@ -5,11 +5,17 @@ using UnityEngine.Audio;
 
 public enum ESoundType
 {
-    Walk,
+    //Walk,
     Click,
-    Cannon,
-    Clock,
-    Max // 마지막 인덱스 확인용. 실제로 클립을 할당하지 않음.
+    //Cannon,
+    //Clock,
+    MachineWhirr,   // 기계 돌아가는 소리
+    Bubbling,       // 비커 보글보글 소리
+    BeakerClink,    // 비커 닿는 소리
+    LightSparkle,   // 불빛 반짝 소리
+    CannonFire,     // 대포 발사 소리
+    CarEngine,      // 자동차 소리
+    Max             // 마지막 인덱스 확인용. 실제로 클립을 할당하지 않음.
 }
 
 public class AudioManager : MonoBehaviour
